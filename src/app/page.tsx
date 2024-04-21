@@ -46,7 +46,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const apiKey =  "76a5fe9deac25987d9a04b7f3fcad5cb";
+      const apiKey = process.env.MOVIE_API_KEY ?? '';
       const { nowPlaying, popular } = await fetchMovies(apiKey);
       setNowPlaying(nowPlaying || []);
       setPopular(popular || []);
