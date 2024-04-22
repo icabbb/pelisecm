@@ -46,7 +46,8 @@ export default function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const apiKey = process.env.MOVIE_API_KEY ?? '';
+      const apiKey = process.env.NEXT_PUBLIC_MOVIE_API_KEY!; // Set a default value of an empty string if apiKey is undefined
+      
       const { nowPlaying, popular } = await fetchMovies(apiKey);
       setNowPlaying(nowPlaying || []);
       setPopular(popular || []);

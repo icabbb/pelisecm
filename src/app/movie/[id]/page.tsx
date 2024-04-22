@@ -44,7 +44,7 @@ export default function MovieDetails() {
   useEffect(() => {
     const fetchData = async () => {
       if (id) {
-        const apiKey = process.env.MOVIE_API_KEY ?? '';
+        const apiKey = process.env.NEXT_PUBLIC_MOVIE_API_KEY!;
         const movieData = await fetchMovie(id, apiKey);
         const castData = await fetchMovieCast(id, apiKey);
         setMovie(movieData);
